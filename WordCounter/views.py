@@ -24,6 +24,8 @@ def count(request):
             else:
                 # add
                 wordictionary[word] = 1
+                #If reverse is assigned True, then the sorting will be in descending order:
+                #ascending =  high level 
         sortedWord = sorted(wordictionary.items(), key=operator.itemgetter(1), reverse=True)
         return render(request, 'count.html',
                               {'fulltext':full_text,'count':len(wordlist),'sortedwords':sortedWord})
