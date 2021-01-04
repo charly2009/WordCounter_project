@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html lang="en">
+
+<h1 lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,25 +9,39 @@
         form input{
             display: flex;
             margin: 15px auto;
-            align-items: center;
+
             text-align: center;
             padding: 10px;
             font-size: 30px;
         }
         a{
             margin-left: 190px;
-            text-decoration: #6DDCBD;
+            text-decoration: none;
+        }
+        #text{
+
+            resize: none;
+             outline: none;
+        }
+        #click{
+
         }
     </style>
+
 </head>
+{% if error %}
+<h1>{{error}}</h1>
+{% endif %}
 <body>
 <h1 style="color:red;text-align: center" >Word Counter</h1>
 <a href="{% url 'about' %}">About</a>
-<form action="{% url 'count' %}" style="text-align: center; resize: none" ><!--to enter url info {% url 'count' %}  give the name of page -->
-<textarea cols="150" rows="10" name="full-text"  style="text-align: center; resize: none; outline: none"></textarea>
+<form action="{% url 'count' %}" style="text-align: center; resize: none" name="form"><!--to enter url info {% url 'count' %}  give the name of page -->
+<textarea  cols="150" rows="10" name="full-text" id="text" ></textarea>
 <br>
 <br>
-    <input type="submit" value="Count"/>
+    <input  type="submit" value="Count"/>
 </form>
+
+</script>
 </body>
 </html>

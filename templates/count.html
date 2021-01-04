@@ -9,21 +9,21 @@
     }
     a{
         text-align: center;
+        text-decoration: none;
     }
 </style>
 </head>
 <body>
-<h1 >The number of the words are {{count}}:</h1>
-<center><a href="{% url 'home' %}">Start Again</a></center>
+<h1 >The number of the words are {{count}}</h1>
+<center><button><a href="{% url 'home' %}">Start Again</a></button></center>
 <h1 >Your Text:</h1>
                 <center>{{ fulltext }} </center>
-<h1 >Word Count:</h1>
+<h1 >Number of each word:</h1>
 <center>
-{% for word, counttotal in wordictionary  %}
+{% for word, counttotal in sortedwords  %}
 
 {{word}} : {{counttotal}}
 <br>
-
 <br>
 {% endfor %}
    </center>
